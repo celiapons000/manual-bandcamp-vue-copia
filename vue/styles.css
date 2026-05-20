@@ -1,0 +1,83 @@
+@import url('https://fonts.cdnfonts.com/css/blogger-sans');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Blogger Sans', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #0d1232;
+  color: white;
+}
+
+.card {
+  background: #1a1f3c;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  font-size: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.portada {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.precio-minimo {
+  margin: 0 0 1rem;
+  font-size: 13px;
+}
+
+.campo {
+  margin-bottom: 0.75rem;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.campo input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 14px;
+  outline: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.footer button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.footer button:hover {
+  background: rgba(255,255,255,0.1);
+}

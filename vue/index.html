@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pago</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="card">
+        <img src="assets/ilustra.png" alt="portada" class="portada" />
+
+        <p class="precio-minimo">Precio mínimo: 15€</p>
+
+        <div class="campo">
+          <label>Tu precio:</label>
+          <input v-model="tuPrecio" type="number" placeholder="0€" />
+        </div>
+
+        <div class="campo">
+          <label>País:</label>
+          <input v-model="pais" type="text" placeholder="España" />
+        </div>
+
+        <div class="campo">
+          <label>Dirección:</label>
+          <input v-model="direccion" type="text" placeholder="Calle..." />
+        </div>
+
+        <div class="campo">
+          <label>¿Código de descuento?</label>
+          <input v-model="codigo" type="text" />
+        </div>
+
+        <div class="footer">
+          <button @click="continuar">Continuar al pago</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

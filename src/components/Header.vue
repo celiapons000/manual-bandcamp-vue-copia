@@ -5,13 +5,8 @@
       class="site-header__logo"
       @click="$emit('select', 'inicio')"
     >
-      <span class="site-header__logo-icon-wrap">
-        <img
-          ref="logoIconRef"
-          class="site-header__logo-icon"
-          :src="currentLogoIcon"
-          alt="Bandcamp icon"
-        />
+      <span class="site-header__logo-symbol">
+        b
       </span>
 
       <span class="site-header__logo-text">
@@ -46,13 +41,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import { gsap } from 'gsap'
-
-import logoIconOne from '../assets/images/Capa 4.svg'
-import logoIconTwo from '../assets/images/Capa 5.svg'
-import logoIconThree from '../assets/images/Capa 6.svg'
-
 defineEmits(['select', 'toggle-theme'])
 
 defineProps({
@@ -88,59 +76,6 @@ const headerItems = [
     label: 'Apps'
   }
 ]
-
-const logoIcons = [
-  logoIconOne,
-  logoIconTwo,
-  logoIconThree
-]
-
-const activeLogoIndex = ref(0)
-const logoIconRef = ref(null)
-let logoInterval = null
-
-const currentLogoIcon = computed(() => {
-  return logoIcons[activeLogoIndex.value]
-})
-
-function changeLogoIcon() {
-  if (!logoIconRef.value) return
-
-  gsap.to(logoIconRef.value, {
-    opacity: 0,
-    scale: 0.85,
-    rotate: -8,
-    duration: 0.25,
-    ease: 'power2.in',
-    onComplete: () => {
-      activeLogoIndex.value = (activeLogoIndex.value + 1) % logoIcons.length
-
-      gsap.fromTo(
-        logoIconRef.value,
-        {
-          opacity: 0,
-          scale: 0.85,
-          rotate: 8
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          rotate: 0,
-          duration: 0.35,
-          ease: 'power2.out'
-        }
-      )
-    }
-  })
-}
-
-onMounted(() => {
-  logoInterval = setInterval(changeLogoIcon, 1800)
-})
-
-onBeforeUnmount(() => {
-  clearInterval(logoInterval)
-})
 </script>
 
 <style scoped>
@@ -172,7 +107,7 @@ onBeforeUnmount(() => {
   text-decoration: none;
 }
 
-.site-header__logo-icon-wrap {
+.site-header__logo-symbol {
   width: 30px;
   height: 30px;
 
@@ -181,13 +116,15 @@ onBeforeUnmount(() => {
   justify-content: center;
 
   flex-shrink: 0;
-}
 
-.site-header__logo-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+  border: 2px solid #eb5e28;
+  border-radius: 8px;
+
+  color: #eb5e28;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.08em;
 }
 
 .site-header__logo-text {

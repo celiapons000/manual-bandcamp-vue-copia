@@ -2,64 +2,28 @@
   <footer class="site-footer">
     <div class="site-footer__top">
       <div class="site-footer__brand">
-        <img
-          class="site-footer__logo"
-          :src="logoLight"
-          alt="Bandcamp"
-        />
-
+        <span class="site-footer__wordmark">Bandcamp</span>
         <span class="site-footer__dot">·</span>
-
         <span class="site-footer__title">brand manual</span>
       </div>
 
       <p class="site-footer__meta">
-        Celia Pons — Almudena Estévez · 2026 · Academic
+        Proyecto académico · 2026
       </p>
     </div>
 
     <div class="site-footer__main">
       <div class="site-footer__intro">
-        <div class="site-footer__small-brand">
-          <img
-            class="site-footer__orange-logo"
-            :src="logoOrange"
-            alt="Bandcamp"
-          />
-        </div>
-
         <h2 class="site-footer__headline">
           Se construye,<br />
           no se decora.
         </h2>
 
         <p class="site-footer__text">
-          Este manual recoge las decisiones visuales del Manual de Marca. Cualquier
-          aplicación nueva debe partir de los componentes documentados,
-          preservando el ritmo, el tono y la estética descrita.
+          Este manual recoge las decisiones visuales del sistema de marca.
+          Cualquier aplicación nueva debe partir de los componentes documentados,
+          preservando el ritmo, el tono y la coherencia del proyecto.
         </p>
-      </div>
-
-      <div class="site-footer__actions">
-        <a
-          class="site-footer__button"
-          href="/manual-bandcamp.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>↗</span>
-          Abrir PDF
-        </a>
-
-        <a
-          class="site-footer__link"
-          href="https://github.com/celiapons000/manual-bandcamp-vue.git"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>↗</span>
-          Repositorio
-        </a>
       </div>
     </div>
 
@@ -78,12 +42,12 @@
 
       <div class="site-footer__column">
         <p class="site-footer__column-title">Equipo</p>
-        <p>Diseño gráfico digital · Celia Pons · Almudena Estévez</p>
+        <p>Diseño gráfico digital</p>
       </div>
 
       <div class="site-footer__column">
-        <p class="site-footer__column-title">Fuentes</p>
-        <p>Sistema desarrollado en Figma</p>
+        <p class="site-footer__column-title">Sistema</p>
+        <p>Manual web desarrollado en Vue</p>
       </div>
     </div>
 
@@ -94,8 +58,6 @@
 </template>
 
 <script setup>
-import logoLight from '../assets/images/Logo_light.svg'
-import logoOrange from '../assets/images/Logo_naranja.svg'
 </script>
 
 <style scoped>
@@ -134,10 +96,12 @@ import logoOrange from '../assets/images/Logo_naranja.svg'
   gap: 8px;
 }
 
-.site-footer__logo {
-  width: 142px;
-  height: auto;
-  display: block;
+.site-footer__wordmark {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--color-white);
 }
 
 .site-footer__dot {
@@ -166,26 +130,11 @@ import logoOrange from '../assets/images/Logo_naranja.svg'
   min-height: 500px;
   padding-top: 155px;
 
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 80px;
+  display: block;
 }
 
 .site-footer__intro {
   max-width: 760px;
-}
-
-.site-footer__small-brand {
-  margin-bottom: 52px;
-
-  display: flex;
-  align-items: center;
-}
-
-.site-footer__orange-logo {
-  width: 160px;
-  height: auto;
-  display: block;
 }
 
 .site-footer__headline {
@@ -205,59 +154,6 @@ import logoOrange from '../assets/images/Logo_naranja.svg'
   font-size: 18px;
   line-height: 1.45;
   font-weight: 500;
-}
-
-.site-footer__actions {
-  padding-top: 6px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 28px;
-}
-
-.site-footer__button,
-.site-footer__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  color: var(--color-white);
-  text-decoration: none;
-  text-transform: uppercase;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-}
-
-.site-footer__button {
-  padding: 16px 22px;
-
-  border: 1px solid var(--color-white);
-  border-radius: 999px;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.site-footer__button:hover {
-  background: var(--color-yellow);
-  color: var(--color-black);
-}
-
-.site-footer__link {
-  padding-right: 6px;
-
-  color: var(--color-white);
-  opacity: 0.9;
-
-  transition: color 0.2s ease;
-}
-
-.site-footer__link:hover {
-  color: var(--color-yellow);
 }
 
 .site-footer__divider {
@@ -327,6 +223,12 @@ import logoOrange from '../assets/images/Logo_naranja.svg'
     gap: 18px;
   }
 
+  .site-footer__brand {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .site-footer__wordmark,
   .site-footer__title {
     font-size: 24px;
   }
@@ -338,20 +240,10 @@ import logoOrange from '../assets/images/Logo_naranja.svg'
 
   .site-footer__main {
     padding-top: 90px;
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .site-footer__actions {
-    align-items: flex-start;
   }
 
   .site-footer__headline {
     font-size: clamp(48px, 15vw, 72px);
-  }
-
-  .site-footer__orange-logo {
-    width: 140px;
   }
 
   .site-footer__info {
